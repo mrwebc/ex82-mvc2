@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.study.jsp.conf.Factory;
+import com.study.jsp.ioc.Factory;
 import com.study.jsp.model.BoardDTO;
 import com.study.jsp.srv.BoardService;
 
@@ -24,8 +24,6 @@ public class WriteController extends HttpServlet{
     String content = request.getParameter("content");
     String nickname = request.getParameter("nickname");
     String userid = request.getParameter("userid");
-
-    
 
     BoardDTO dto = new BoardDTO();
     dto.setTitle(title);

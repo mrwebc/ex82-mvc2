@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.study.jsp.conf.Factory;
+import com.study.jsp.ioc.Factory;
 import com.study.jsp.model.BoardDTO;
 import com.study.jsp.srv.BoardService;
 
@@ -25,10 +25,11 @@ public class ListController extends HttpServlet{
     HttpSession session = request.getSession();
     
     System.out.println("ListCtrl~!");
-    
-    //login page를 거쳐오면 session에 id와 name 속성이 존재한다
+
+    // list.jsp는 로그인한 사용자만 접근 가능하도록 설정
     if(session.getAttribute("userid") == null) {
         response.sendRedirect("./login.jsp");
+        // 서블릿에서는 리다이렉트 처리후 return 작성하지 않으면 아래 코드가 실행된다.
         return;
     }
 

@@ -9,8 +9,8 @@
 
 	<body>
 		<div id="wrap">
-			<h1>로그인</h1>
-			<form action="./loginCtrl" method="post">
+	        <!-- http://localhost:8090/jsp_mvc2/loginCtrl -->
+	        <form action="${pageContext.request.contextPath}/loginCtrl" method="post">
 				<fieldset>
 					<legend>정보입력</legend>
 					<ul>

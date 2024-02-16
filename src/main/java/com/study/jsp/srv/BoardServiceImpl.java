@@ -8,7 +8,8 @@ import com.study.jsp.model.BoardDTO;
 import com.study.jsp.model.BoardVO;
 
 public class BoardServiceImpl implements BoardService {
-  
+
+  // 필요한 객체를 Factory에서 주입(DI)
   private BoardMapper dao;
   
   public BoardServiceImpl(BoardMapper dao) {
@@ -75,7 +76,8 @@ public class BoardServiceImpl implements BoardService {
 
   @Override
   public int update(BoardDTO dto) {
-    
+
+    // DTO를 VO로 변환하는 작업
     BoardVO vo = new BoardVO();
     vo.setSeq(dto.getSeq());
     vo.setContent(dto.getContent());

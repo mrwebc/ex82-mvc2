@@ -7,12 +7,14 @@
 <title>글 상세</title>
 </head>
 
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
 <body>
     <div id="wrap">
         <h1>상세게시글</h1>
         <p>${name}님 환영합니다.</p>
         
-        <form action="./editCtrl" method="post">
+        <form action="${contextPath}/editCtrl" method="post">
             <input type="hidden" name="seq" value="${dto.seq}" />
             <fieldset>
                 <legend>글내용</legend>
@@ -48,9 +50,9 @@
             <p><button>글수정</button></p>
         </form>
         <p>
-            <a href="./write.jsp">글등록</a> <br />
-            <a href="./deleteCtrl?seq=${dto.seq}">글삭제</a> <br />
-            <a href="./listCtrl">글목록</a>        
+            <a href="./write.jsp">글등록</a> <br>
+            <a href="${contextPath}/deleteCtrl?seq=${dto.seq}">글삭제</a> <br>
+            <a href="${contextPath}/listCtrl">글목록</a> <br>       
         </p>
     </div>
 

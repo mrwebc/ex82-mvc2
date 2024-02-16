@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.study.jsp.conf.Factory;
+import com.study.jsp.ioc.Factory;
 import com.study.jsp.srv.BoardService;
 
 @WebServlet("/deleteCtrl")
@@ -18,8 +18,10 @@ public class DeleteController extends HttpServlet{
 
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    
+
+    // seq 처리 로직 
     int seq = 0;
+    
     String seq_ = request.getParameter("seq");
     if(!seq_.isEmpty()){
       seq = Integer.valueOf(seq_);
