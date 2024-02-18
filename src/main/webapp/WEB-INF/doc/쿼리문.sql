@@ -1,7 +1,7 @@
-drop database if exists mvc1;
+drop database if exists jsp_mvc;
 create database mvc1 default character set utf8;
 
-use mvc1;
+use jsp_mvc;
 
 drop table if exists board;
 drop table if exists user;
